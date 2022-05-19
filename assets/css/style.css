@@ -20,11 +20,8 @@ body {
 
 /* Banner */
 .bg-banner {
-    padding: 3rem 0;
-    /* background: url(../images/3.jpeg);
-    background-repeat: repeat;
-    background-size: 30%; */
-    height: 100vh;
+    padding: 5rem 0;
+    /* height: 100vh; */
     background: linear-gradient(to bottom, var(--background-color), var(--secondary-color));
 }
 
@@ -34,8 +31,8 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100%;
-    /* color: var(--primary-color); */
     color: #fff;
+    text-align: center;
 }
 
 .banner img {
@@ -45,6 +42,27 @@ body {
 
 .banner > span {
     font-size: 2em;
+}
+
+.banner > span.banner-exibition {
+    font-size: 1.25em;
+}
+
+.banner-button {
+    display: flex;
+    gap: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.banner-button a.exibition {
+    background-color: var(--primary-color);
+}
+
+.banner-button a.exibition:hover {
+    background-color: rgb(204, 71, 224, 0.2);
 }
 
 .banner a {
@@ -66,7 +84,7 @@ body {
 }
 
 .banner a i {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .banner-scroll {
@@ -108,6 +126,28 @@ body {
     color: var(--primary-color);
 }
 
+/* Teaser */
+.bg-teaser {
+    padding: 3rem 0;
+}
+
+.bg-teaser h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Content */
+.bg-content {
+    padding: 3rem 0;
+}
+
+.bg-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
 /* Event */
 .bg-event {
     padding: 3rem 0;
@@ -115,7 +155,7 @@ body {
 
 .bg-event h1 {
     color: var(--primary-color);
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 2rem;
 }
 
@@ -138,14 +178,64 @@ body {
 }
 
 .event-poster {
-    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .event-poster > span {
     display: block;
     text-align: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
+}
+
+.event-card > a {
+    background-color: var(--background-color);
+    padding: .5rem 0;
+    display: block;
+    text-align: center;
+    font-size: .75em;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: .3s;
+}
+
+.event-card > a:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.upcoming-event {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100% - 1.5rem);
+    color: #fff;
+    padding-left: 2rem;
+    gap: 3rem;
+}
+
+.upcoming-event-container h3 {
+    color: var(--primary-color);
+    font-size: 1.25em;
+}
+
+.upcoming-event-container span {
+    color: #fff;
+}
+
+.upcoming-event a {
+    color: var(--primary-color);
+    transition: .3s;
+    display: block;
+    word-break: break-all;
+    font-size: .9em;
+    margin-top: .25rem;
+}
+
+.upcoming-event a:hover {
+    color: var(--background-color);
 }
 
 /* Sponsor */
@@ -162,36 +252,79 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    padding-bottom: 2rem;
+    height: calc(100% - 2rem);
+    padding: 1rem 0;
+    background-color: var(--background-color);
 }
 
 .sponsor-container {
     margin-bottom: 2rem;
     color: #fff;
+    overflow: hidden;
 }
 
 .sponsor-container h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: #fff;
+}
+
+.sponsor-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.sponsor-list > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-list img {
+    height: 100px;
+    max-width: 100%;
+}
+
+.sponsor-list img.long {
+    height: 50px;
+}
+
+.medpart-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.medpart-list img {
+    height: 75px;
 }
 
 .contact-person {
     margin-top: 2rem;
     color: #fff;
+    text-align: center;
+    overflow: hidden;
 }
 
-.contact-person table tr td {
-    padding-right: .5rem;
-}
-
-.contact-person table tr td a {
+.contact-detail a {
     color: #fff;
     text-decoration: none;
     transition: .3s;
 }
 
-.contact-person table tr td a:hover {
+.contact-detail a:hover {
     color: var(--primary-color);
 }
 
@@ -201,12 +334,74 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .medpart-list {
+        padding: 0;
+    }
+
+    .sponsor-wrapper {
+        height: auto;
+    }
+
+    .upcoming-event {
+        height: auto;
+    }
+
+    .upcoming-event {
+        height: auto;
+        gap: 2rem;
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+
+    .bg-banner {
+        padding: 3rem 0;
+    }
+
+    .banner span {
+        font-size: 1em;
+    }
+
+    .banner-scroll .scroll-icon {
+        font-size: 2em;
+    }
 }
 
 @media(min-width: 576px) {
     .intro-desc img {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .sponsor-wrapper {
+        height: auto;
+    }
+
+    .upcoming-event {
+        height: auto;
+    }
+
+    .upcoming-event {
+        height: auto;
+        gap: 2rem;
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .bg-banner {
+        padding: 3rem 0;
+    }
+
+    .banner span {
+        font-size: 1.25em;
+    }
+
+    .banner img {
+        max-width: 70%;
+    }
+
+    .banner-scroll .scroll-icon {
+        font-size: 2em;
     }
 }
 
@@ -215,11 +410,65 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .sponsor-wrapper {
+        height: auto;
+    }
+
+    .upcoming-event {
+        height: auto;
+        gap: 2rem;
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+
+    .bg-banner {
+        padding: 3rem 0;
+    }
+
+    .banner span {
+        font-size: 1.25em;
+    }
+
+    .banner img {
+        max-width: 70%;
+    }
+
+    .banner-scroll .scroll-icon {
+        font-size: 2em;
+    }
 }
 
 @media(min-width: 992px) {
     .intro-desc img {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .sponsor-wrapper {
+        height: calc(100% - 2rem);
+    }
+
+    .upcoming-event {
+        height: calc(100% - 1.5rem);
+        gap: 3rem;
+        padding-left: 2rem;
+        margin-top: 0;
+    }
+
+    .bg-banner {
+        padding: 5rem 0;
+    }
+
+    .banner span {
+        font-size: 1.25em;
+    }
+
+    .banner img {
+        max-width: 100%;
+    }
+
+    .banner-scroll .scroll-icon {
+        font-size: 3em;
     }
 }
