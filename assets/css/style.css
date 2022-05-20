@@ -462,10 +462,6 @@ body {
         margin-right: 0;
     }
 
-    .sponsor-wrapper {
-        /* height: calc(100% - 2rem); */
-    }
-
     .upcoming-event {
         height: calc(100% - 1.5rem);
         gap: 3rem;
